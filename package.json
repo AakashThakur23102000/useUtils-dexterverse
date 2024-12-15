@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/AakashThakur23102000/useUtils-dexterverse/issues"
   },
-  "homepage": "https://github.com/AakashThakur23102000/useUtils-dexterverse#readme"
+  "homepage": "https://github.com/AakashThakur23102000/useUtils-dexterverse#readme",
+  "dependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "@types/react": "*"
+  }
 }
