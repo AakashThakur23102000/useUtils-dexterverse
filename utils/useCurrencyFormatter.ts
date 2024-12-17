@@ -129,8 +129,6 @@ export const useCurrencyFormatter = (
   const defaultOptions: Intl.NumberFormatOptions = {
     style: "currency",
     currency,
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2,
   };
 
   // Merge default options with user-provided options
