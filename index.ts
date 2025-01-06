@@ -8,3 +8,5 @@ export { useDebounceFunc } from "./utils/useDebounceFunc"
 export { useThrottleFunc } from "./utils/useThrottleFunc"
 //date formatter
 export {useDateFormatter} from "./utils/useDateFormatter"
+//masked data
+export {useMaskedData} from "./utils/useMaskedData"
