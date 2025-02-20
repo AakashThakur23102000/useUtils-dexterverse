@@ -1,6 +1,6 @@
 {
   "name": "useutils-dexterverse",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "It is a package which conatins multiple usefull functions used for basic logic work.",
   "main": "index.ts",
   "type": "module",
@@ -12,7 +12,9 @@
     "url": "git+https://github.com/AakashThakur23102000/useUtils-dexterverse.git"
   },
   "keywords": [
-    "utils","react","react-native"
+    "utils",
+    "react",
+    "react-native"
   ],
   "author": "AakashThakur23102000",
   "license": "MIT",
