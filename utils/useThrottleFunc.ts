@@ -1,20 +1,31 @@
-let isThrottleTimerActive = false;
+import { useRef, useCallback } from "react";
 
 /**
- * useThrottleFunc - A simple throttle function for API calls.
+ * useThrottleFunc - A hook that returns a throttled function.
  * 
- * @param interval Time interval in milliseconds to throttle the function.
  * @param actionFunction Function to execute at throttled intervals.
+ * @param interval Time interval in milliseconds.
+ * @returns A throttled function.
  */
-export function useThrottleFunc(interval: number, actionFunction: () => void) {
-    if (isThrottleTimerActive) {
-        return; // Skip execution if the throttle timer is active
-    }
+export function useThrottleFunc<T extends (...args: any[]) => void>(
+  actionFunction: T,
+  interval: number
+) {
+  const isThrottleActive = useRef(false);
 
-    actionFunction(); // Execute the function
-    isThrottleTimerActive = true; // Set the throttle timer as active
+  return useCallback(
+    (...args: Parameters<T>) => {
+      if (isThrottleActive.current) {
+        return; // Skip execution if throttle is active
+      }
 
-    setTimeout(() => {
-        isThrottleTimerActive = false; // Reset the throttle timer after the interval
-    }, interval);
+      actionFunction(...args); // Execute function
+      isThrottleActive.current = true; // Set throttle active
+
+      setTimeout(() => {
+        isThrottleActive.current = false; // Reset throttle after interval
+      }, interval);
+    },
+    [actionFunction, interval]
+  );
 }

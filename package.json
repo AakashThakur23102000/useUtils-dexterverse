@@ -12,7 +12,7 @@
     "url": "git+https://github.com/AakashThakur23102000/useUtils-dexterverse.git"
   },
   "keywords": [
-    "utils"
+    "utils","react","react-native"
   ],
   "author": "AakashThakur23102000",
   "license": "MIT",
