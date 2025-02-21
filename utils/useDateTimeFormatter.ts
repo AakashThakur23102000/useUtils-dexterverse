@@ -31,6 +31,7 @@ type DateFormat =
     | 'M-YYYY'
     | 'DD-MM-YY'
     | 'MMMM DD, YYYY'
+    | "HH:MM:SS"
     ;
 
 const useDateFormatterFormatters: Record<DateFormat, (d: Date) => string> = {
@@ -66,9 +67,10 @@ const useDateFormatterFormatters: Record<DateFormat, (d: Date) => string> = {
     'M-YYYY': (d) => `${d.getMonth() + 1}-${d.getFullYear()}`,
     'DD-MM-YY': (d) => `${String(d.getDate()).padStart(2, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getFullYear()).slice(2)}`,
     'MMMM DD, YYYY': (d) => `${d.toLocaleString('en-US', { month: 'long' })} ${String(d.getDate()).padStart(2, '0')}, ${d.getFullYear()}`,
+    'HH:MM:SS': (d) => `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}:${String(d.getSeconds()).padStart(2, '0')}`,
 };
 
-export function useDateFormatter(date: Date, format: DateFormat): string {
+export function useDateTimeFormatter(date: Date, format: DateFormat): string {
     if (useDateFormatterFormatters.hasOwnProperty(format)) {
         return useDateFormatterFormatters[format](date);
     } else {

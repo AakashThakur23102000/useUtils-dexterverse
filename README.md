@@ -192,23 +192,23 @@ export default App;
 <br/>
 
 
-# 📅 Date Formatter Util Function
-The useDateFormatter() function allows you to format JavaScript Date objects into various human-readable formats.
+# 📅 Date Time Formatter Util Function
+The useDateTimeFormatter() function allows you to format JavaScript Date objects into various human-readable formats.
 
-### 1. useDateFormatter()
+### 1. useDateTimeFormatter()
 Formats a given date into the specified format.
 
 ```typescript
 // import
-import { useDateFormatter } from 'useutils-dexterverse'
+import { useDateTimeFormatter } from 'useutils-dexterverse'
 ```
 ```typescript
 // // 🚀 Example Usage
 // Using current date
-console.log(useDateFormatter(new Date(), "DD/MM/YYYY HH:mm"));
+console.log(useDateTimeFormatter(new Date(), "DD/MM/YYYY HH:mm"));
 
 // Using a custom date
-console.log(useDateFormatter(new Date("2024-05-15T14:45:00"), "DD/MM/YYYY HH:mm"));
+console.log(useDateTimeFormatter(new Date("2024-05-15T14:45:00"), "DD/MM/YYYY HH:mm"));
 
 //second argument suggests all available formats so don't worry
 ```
